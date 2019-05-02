@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const URL = "https://jsonplaceholder.typicode.com/posts?userId=1"
+        
+        // const XHR = new XMLHttpRequest()
+
+        // XHR.open('GET', URL)
+        // XHR.send()
+        // XHR.addEventListener('load',function(e){
+        //     const result = e.target.response
+        //     // console.log(result)
+        //     const parseData = JSON.parse(result)
+        //     console.log(parseData)
+        // })
+
+        const URL = "https://jsonplaceholder.typicode.com/posts?userId=1"
+        
+        const XHR = new XMLHttpRequest()
+
+        XHR.open('POST', URL)
+        XHR.setRequestHeader(
+            'Content-Type','application/json;charset=UTF-8'
+        )
+        const data = {
+            title : "안녕하세요",
+            body : "곧있으면 점심시간!!",
+            userId : 1
+        }
+
+        const jsonData = JSON.stringify(data)
+        XHR.send(jsonData)
+        XHR.addEventListener('load',function(e){
+            const result = e.target.response
+            // console.log(result)
+            const parseData = JSON.parse(result)
+            console.log(parseData)
+        })
+        // https://jsonplaceholder.typicode.com/
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <!-- https://jsonplaceholder.typicode.com/ -->
+    <script>
+        const URL = "https://jsonplaceholder.typicode.com/posts"
+
+        const XHR = new XMLHttpRequest()
+
+        XHR.open('GET',URL)
+        XHR.send()
+        XHR.addEventListener('load',function(e){
+            const result = e.target.response
+            const parseData = JSON.parse(result)
+            console.log(parseData)
+        })
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="me">
+
+    </div>
+    <h1 id='hello'>안녕하세요</h1>
+    <button id="my-btn">
+        click
+    </button>
+    <button id='hello-btn'>얍!!!</button>
+    <script>
+        /*
+            [무엇]을    [언제]     [어떻게]한다.
+            버튼을     클릭하면     뿅 한다.       
+
+        */
+        //1. 무엇 => 버튼
+        const button = document.querySelector('#my-btn')
+        console.log(button)
+        
+        // 3. 어떻게 => 뿅이라는 단어를 쓴다.
+        // const what = (e) => {
+        //     const area = document.querySelector('#me')
+        //     area.innerHTML = "<h1>뿅</h1>"
+        //     console.log(e)
+        // }
+
+        // 2. 언제 => 버튼을 '클릭' 하면
+        button.addEventListener('click', event => {
+            const area = document.querySelector('#me')
+            area.innerHTML = "<h1>뿅</h1>"
+            console.log(event)
+        })
+        // button.addEventListener('click', function(){})
+        
+
+
+        //1. 무엇 => 얍버튼
+        const yap = document.querySelector("#hello-btn")
+        // 2. 언제 => 얍버튼을 '클릭' 하면
+        // 3. 어떻게 => 안녕하세요라는 색깔을 바꾼다.
+        yap.addEventListener('click', e => {
+            const hello = document.querySelector('#hello')
+            hello.style.color ='red'
+            console.log(e)
+        })
+
+
+
+
+    </script>
+</body>
+</html>
